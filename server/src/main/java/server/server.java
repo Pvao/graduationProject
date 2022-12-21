@@ -18,7 +18,6 @@ public class server {
                 .handler(new LoggingHandler(LogLevel.INFO))
                 .childOption(ChannelOption.TCP_NODELAY, true)
                 .childHandler(new ServerChannelInitializer());
-
         try {
             var channelFuture = server.bind(8081).sync();
             channelFuture.channel().closeFuture().sync();

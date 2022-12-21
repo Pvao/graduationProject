@@ -1,14 +1,11 @@
 package server;
 
-import java.io.PrintStream;
-
 public class CheckMsg {
     public static String result (String Msg) {
         var normalizMsg = Msg.replaceAll("\n",":");
         var indexTwoPoint = normalizMsg.indexOf(":");
         var bodyMsg  = normalizMsg.substring(indexTwoPoint+1);
         var bodyMsgleght = bodyMsg.length();
-
         int headerBody;
         try {
             headerBody = Integer.parseInt(Msg.substring(0, indexTwoPoint));
